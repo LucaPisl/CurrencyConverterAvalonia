@@ -67,6 +67,10 @@ Currency Converter is a desktop application that allows users to convert between
 
 Contributions are welcome! Please feel free to submit a Pull Request. This was more of a quick practice project, but it can always be improved!
 
+## Credits
+
+Many thanks to [Fawaz Ahmed](https://github.com/fawazahmed0) for the free public currency API, located [here](https://github.com/fawazahmed0/currency-api).
+
 ## License
 
 This project is licensed under version 3 of the GNU General Public License - see the LICENSE file for details.
