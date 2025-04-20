@@ -1,0 +1,173 @@
+<Window
+    Title="CurrencyConverterAvaloniaProject"
+    SizeToContent="WidthAndHeight"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d"
+    x:Class="CurrencyConverterAvaloniaProject.MainWindow"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Window.Styles>
+        <Style Selector="Button:focus">
+            <Setter Property="Background" Value="LightGray"/>
+            <Setter Property="BorderBrush" Value="DarkGray"/>
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style>
+    </Window.Styles>
+    <Canvas Background="Ivory">
+        <Label
+            Canvas.Left="5"
+            Canvas.Top="5"
+            FontSize="20"
+            Foreground="Black"
+            Margin="10">
+            Currency Converter V 1.0
+        </Label>
+        <Label
+            Canvas.Left="25"
+            Canvas.Top="20"
+            FontSize="15"
+            Foreground="Black"
+            Margin="10">
+            made by LucaP
+        </Label>
+        <Label
+            Canvas.Left="5"
+            Canvas.Top="75"
+            FontSize="20"
+            Foreground="Black"
+            Margin="5"
+            UseLayoutRounding="True">
+            Currency to convert from:
+        </Label>
+        <ScrollViewer
+            Canvas.Left="10"
+            Canvas.Top="125"
+            Height="290"
+            HorizontalScrollBarVisibility="Disabled"
+            VerticalScrollBarVisibility="Auto"
+            Width="250">
+            <ListBox Name="AvailableCurrenciesListBox" UseLayoutRounding="True" />
+        </ScrollViewer>
+        <Label
+            Canvas.Left="305"
+            Canvas.Top="75"
+            FontSize="20"
+            Foreground="Black"
+            Margin="5"
+            UseLayoutRounding="True">
+            Currency to convert into:
+        </Label>
+        <Label
+            Canvas.Left="305"
+            Canvas.Top="100"
+            FontSize="15"
+            Foreground="Black"
+            Margin="5"
+            UseLayoutRounding="True">
+            (you can select multiple options here)
+        </Label>
+        <ScrollViewer
+            Canvas.Left="325"
+            Canvas.Top="125"
+            Height="290"
+            HorizontalScrollBarVisibility="Disabled"
+            VerticalScrollBarVisibility="Auto"
+            Width="250">
+            <ListBox
+                Name="ToConvertCurrenciesListBox"
+                SelectionMode="Multiple,Toggle"
+                UseLayoutRounding="True" />
+        </ScrollViewer>
+        <Label
+            Canvas.Left="805"
+            Canvas.Top="75"
+            FontSize="20"
+            Foreground="Black"
+            Margin="5"
+            UseLayoutRounding="True">
+            Result:
+        </Label>
+        <ScrollViewer
+            Canvas.Left="825"
+            Canvas.Top="125"
+            Height="290"
+            HorizontalScrollBarVisibility="Disabled"
+            VerticalScrollBarVisibility="Auto"
+            Width="250">
+            <TextBox IsReadOnly="True" Name="ResultCurrencyTextBox" />
+        </ScrollViewer>
+        <TextBox
+            Canvas.Left="600"
+            Canvas.Top="550"
+            Name="DateCurrencyConversionTextBox"
+            Text="" />
+        <Label
+            Canvas.Left="450"
+            Canvas.Top="500"
+            FontSize="20"
+            Foreground="Black"
+            Margin="5">
+            Desired date for conversion (yyyy-MM-dd)
+        </Label>
+        <Label
+            Canvas.Left="440"
+            Canvas.Top="600"
+            FontSize="15"
+            Foreground="Black"
+            Margin="5">
+            CONVERSION DATA AVAILABLE FROM 2024-03-02 onwards
+        </Label>
+        <Button
+            Background="White"
+            BorderBrush="LimeGreen"
+            BorderThickness="5"
+            Canvas.Bottom="5"
+            Canvas.Left="5"
+            Click="RefreshButtonClickHandler"
+            Foreground="BlueViolet"
+            Margin="0,5"
+            Name="CalcButton">
+            Refresh
+        </Button>
+        <Button
+            Background="White"
+            BorderBrush="Fuchsia"
+            BorderThickness="5"
+            Canvas.Bottom="5"
+            Canvas.Left="100"
+            Click="SaveButton_OnClickClickHandler"
+            Foreground="BlueViolet"
+            Margin="0,5"
+            Name="SaveButton">
+            Save
+        </Button>
+        <Button
+            Background="White"
+            BorderBrush="Red"
+            BorderThickness="5"
+            Canvas.Right="10"
+            Canvas.Top="10"
+            Click="CloseButtonClickHandler"
+            Foreground="BlueViolet"
+            Margin="0,5"
+            Name="CloseButton">
+            Close
+        </Button>
+        <Button
+            Background="White"
+            BorderBrush="Blue"
+            BorderThickness="5"
+            Canvas.Bottom="5"
+            Canvas.Right="5"
+            Click="ConvertButton_OnClickButtonClickHandler"
+            FontSize="20"
+            Foreground="DarkRed"
+            Margin="5,5"
+            Name="ConvertButton">
+            Convert!
+        </Button>
+    </Canvas>
+</Window>
